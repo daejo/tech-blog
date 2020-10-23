@@ -1,4 +1,5 @@
-// npm init -y || initialize npm
+// npm init -y  ||  initialize npm
+// npm i mysql2 sequelize express bcrypt dotenv  ||  installs dependencies
 const sequelize = require('./config/connection');
 const express = require('express');
 const app = express();
