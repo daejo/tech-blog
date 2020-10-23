@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize'); // links sequelize into file
 
-require('dotenv').config();
+
+require('dotenv').config(); // links to specified .env file
 
 let sequelize;
 
