@@ -15,7 +15,7 @@ const path = require('path');
 
 // ======== SESSION REQUIREMENTS ======== //
 const session = require('express-session'); // links express-session into file
-const SequelizeStore = require('connect-session-sequelize')(session.Store); //
+const SequelizeStore = require('connect-session-sequelize')(session.Store); // links connection from session to seqeulize
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
