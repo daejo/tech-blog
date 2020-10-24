@@ -26,10 +26,17 @@ const sess = {
   })
 };
 
+// ======== HANDLEBARS REQUIREMENTS ======== //
+const helpers = require('./utils/helpers');
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({ helpers });
+
+app.use(session(sess)); // turns on session
+app.engine("handlebars", hbs.engine); // states handle bars is incharge of the engine
+app.set("view engine", "handlebars"); // states handlebars is incharge of displaying
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(session(sess)); // turns on session
 app.use(routes); // turns on routes
 
 // turns on connection to server
