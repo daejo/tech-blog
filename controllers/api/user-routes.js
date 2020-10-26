@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // ========= SEARCH SINGLE USER ========= //
-router.get('/:id',  withAuth, (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
@@ -100,7 +100,7 @@ router.post('/login', withAuth, (req, res) => {
 });
 
 // ========= USER LOGOUT ========= //
-router.post('/logout',  withAuth, (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
