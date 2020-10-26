@@ -12,11 +12,13 @@
   * [Usage](#usage)
   * [Dependencies](#dependencies)
   * [Screenshot](#screenshot)
+  * [Walkthrough](#walkthrough)
   * [Questions](#questions)
 
   ## Usage 
 
-  * Open opening app you will be presented with the blog website.
+  * [Website Link](https://enigmatic-cove-24413.herokuapp.com/)
+  * Upon opening app you will be presented with the blog website.
   * You can browse through the entries or you can login/signup.
   * If you choose to sign-up/login you will asked for login/sign-up details.
   * Once loggin in you can cotinue on adding a new post or commenting on existing ones.  
@@ -39,6 +41,10 @@
 
 
 ![Screenshot](./images/screenshot.png)
+
+## Walkthrough
+
+
 
 
   ---
