@@ -1,31 +1,31 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
+<div class="container bg-info text-white">
+  <article>
+    <a href="/dashboard" class="text-white"> &larr; Back to dashboard</a>
+    <p><h3>
+      Edit Post
+    </h3></p>
+    <form class="edit-post-form">
+      <div>
+        <input name="post-title" type="text" value="{{post.title}}" />
+        <span>{{post.content}}</span>
+      </div>
+      <button type="submit" class="btn-outline-info">Save post</button>
+      <button type="button" class="delete-post-btn btn-outline-info">Delete post</button>
+    </form>
+  </article></br>
+
+  {{#if loggedIn}}
+  <form class="comment-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      {{!-- <span>{{post.content}}</span> --}}
-      <textarea name="comment-body" type="text" value="{{post.content}}"></textarea>
+      <textarea name="comment-body"></textarea>
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+
+    <div>
+      <button type="submit" class="btn-outline-info">add comment</button>
+    </div>
   </form>
-</article>
-
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-{{/if}}
-
+  {{/if}}
+</div>
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
 <script src="/javascript/comment.js"></script>

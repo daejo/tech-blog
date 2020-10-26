@@ -1,32 +1,35 @@
+<div class="container">
 
-<section>
-  <h2>Create New Post</h2>
+<section class="bg-info col-3 p-3">
+  <center><h3 class="text-white">Create New Post</h3></center>
 
   <form class="new-post-form">
     <div>
-      <label for="post-title">Title</label>
+      <label for="post-title" class="text-white">Title</label></br>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="content">Content</label>
-      <input id="content" name="content" />
-    </div>
-    <button type="submit" class="btn">Create</button>
+      <label for="content" class="text-white">Content</label></br>
+      <input id="content" name="content"/>
+    </div></br>
+    <button type="submit" class="btn btn-outline-primary">Create</button>
   </form>
 </section>
+<section class="col-9"></section>
 
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
-  <ol>
+  <h3>Your Posts</h3>
+  <ul class="list-group">
     {{#each posts as |post|}}
-    <li>
+    <li class="list-group-item">
       {{> post-info post}}
       <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
+</div>
 
 <script src="/javascript/add-post.js"></script>

@@ -23,10 +23,10 @@
           <nav>
             <div class="col p-4">
             {{#if loggedIn}}
-              <a href="/dashboard" class="text-white">dashboard</a>
-                <button id="logout" class="btn-no-style text-white">logout</button>
+              <a href="/dashboard" class="text-white"><button class="btn btn-outline-info">dashboard</button></a>
+                <button id="logout" class="btn btn-outline-info">logout</button>
             {{else}}
-              <a href="/login" class="text-white">login</a>
+              <a href="/login" class="text-white"><button class="btn btn-outline-info">login</button></a>
             {{/if}}
             </div>
           </nav>
@@ -35,8 +35,11 @@
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      Stay informed, keep innovating!
+    </br>
+    <footer class="bg-primary text-white">
+      <center>
+        Stay informed, keep innovating!
+      </center>
     </footer>
   </div>
 
