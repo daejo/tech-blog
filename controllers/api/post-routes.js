@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 });
 
 // ========= FIND SPECIFIC POST ========= //
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -77,7 +77,7 @@ router.get('/:id', withAuth, (req, res) => {
 });
 
 // ========= CREATE POST ========= //
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
 
   Post.create({
     title: req.body.title,
@@ -92,7 +92,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // ========= EDIT POST ========= //
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Post.update(
     {
       title: req.body.title
@@ -117,7 +117,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // ========= DELETE POST ========= //
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id

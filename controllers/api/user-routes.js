@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 // ========= SEARCH SINGLE USER ========= //
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
@@ -51,7 +51,7 @@ router.get('/:id', withAuth, (req, res) => {
 });
 
 // ========= USER CREATION ========= //
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   User.create({
     // required input for a user object //
     username: req.body.username,
@@ -70,7 +70,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 // ========= USER LOGIN ========= //
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', (req, res) => {
   User.findOne({
     where: {
       username: req.body.username
@@ -100,7 +100,7 @@ router.post('/login', withAuth, (req, res) => {
 });
 
 // ========= USER LOGOUT ========= //
-router.post('/logout', withAuth, (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -112,7 +112,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 // ========= EDIT USER ========= //
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
